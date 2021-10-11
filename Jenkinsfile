@@ -16,8 +16,6 @@ pipeline {
         }
     }
     post {
-       always {
            junit '/var/jenkins_home/workspace/test1_main/build/test-reports/test.xml'
-       }
     }
 }
