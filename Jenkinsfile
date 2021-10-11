@@ -16,7 +16,7 @@ pipeline {
     }
     post {
        always {
-           junit 'test.xml'
+           junit '/var/jenkins_home/workspace/test1_main/test.xml'
        }
     }
 }
