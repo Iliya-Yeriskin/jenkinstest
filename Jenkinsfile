@@ -10,7 +10,7 @@ pipeline {
                 '''
                 sh 'echo "this is a test" >> text.xml'
                 sh 'pwd'
-                sh 'ls -l'
+                sh 'ls -l build/'
             }
         }
     }
