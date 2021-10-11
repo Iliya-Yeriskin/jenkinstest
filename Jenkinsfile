@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'node' }
+    agent any
     stages {
         stage('Build') {
             steps {
@@ -10,11 +10,11 @@ pipeline {
                 '''
                 sh 'echo "this is a test" >> text.xml'
             }
-            post {
-                always {
-                     junit 'tests/results/test.xml'
-                    }
-                 }
         }
+    }
+    post {
+       always {
+           junit 'tests/results/test.xml'
+       }
     }
 }
