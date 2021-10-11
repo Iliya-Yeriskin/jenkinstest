@@ -8,7 +8,7 @@ pipeline {
                     echo "Multiline shell steps works too"
                     ls -lah
                 '''
-                sh 'echo "this is a test" >> text.xml'
+                sh 'cd build/reports && echo "this is a test" >> text.xml'
             }
                     post {
              always {
