@@ -8,7 +8,8 @@ pipeline {
                     echo "Multiline shell steps works too"
                     ls -lah
                 '''
-                sh 'echo "this is a test">>text.xml'
+                sh 'echo "this is a test" >> text.xml'
+                sh 'cat text.xml'
                 sh 'ls -l'
             }
         }
