@@ -8,7 +8,7 @@ pipeline {
                     echo "Multiline shell steps works too"
                     ls -lah
                 '''
-                sh 'mkdir build && cd build && mkdir reports'
+                sh 'cd build && mkdir reports'
                                 sh 'cd build/reports && touch text.xml'
             }
                     post {
