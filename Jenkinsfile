@@ -9,6 +9,7 @@ pipeline {
                     ls -lah
                 '''
                 sh 'echo "this is a test" >> text.xml'
+                sh 'ls -l'
             }
         }
     }
