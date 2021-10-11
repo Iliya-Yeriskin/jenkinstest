@@ -7,7 +7,6 @@ pipeline {
                 sh '''
                     echo "Multiline shell steps works too"
                     ls -lah
-                    cd build && mkdir test-reports
                 '''
                 sh 'echo "this is a test" >> build/test-reports/text.xml'
                 sh 'pwd'
