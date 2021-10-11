@@ -10,11 +10,11 @@ pipeline {
                 '''
                 sh 'touch text.xml'
             }
-        }
-        post {
+                    post {
              always {
                    junit 'test.xml'
                     }
              }
+        }
     }
 }
