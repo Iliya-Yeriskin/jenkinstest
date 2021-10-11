@@ -9,7 +9,7 @@ pipeline {
                     ls -lah
                 '''
                 sh 'mkdir build && cd build && mkdir reports'
-                                sh 'cd reports && touch text.xml'
+                                sh 'cd build/reports && touch text.xml'
             }
                     post {
              always {
