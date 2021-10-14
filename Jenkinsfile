@@ -9,7 +9,6 @@ pipeline {
                     ls -lah
                 '''
                 sh 'pwd'
-                sh 'ls -l build/test-reports/'
             }
         }
     }
