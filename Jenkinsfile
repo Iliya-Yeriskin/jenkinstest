@@ -12,26 +12,15 @@ pipeline {
             }
         }
          stage("amd64 - Build and Test") {
-            environment {
-                arch = "amd64"
-            }
             steps {
                 script {
-                    configFileProvider([configFile(fileId: 'github-npm-manna-delivery', targetLocation: '.npmrc')]) {
-                        sh "chmod o+r .npmrc"
-                        def containerImage = dockerBuild (
-                            containerImageName: env.image_name,
-                            containerImageTag: "${version}-${arch}",
-                            containerBuildArgs: ["OS_VERSION=${nodeVersion}-${env.nodeImageOS}"],
-                            registryAddress: "${env.aws_account}.dkr.ecr.${env.aws_region}.amazonaws.com",
-                            pushImage: true
-                            extractTestImage: true
-                        )
-                    }
-                    when { not { extractTestImage 'false' } }
-                        steps {
+                    sh 'echo "this is a test"'
+                    extractTestImage: true
+                }
+                when { not { extractTestImage 'false' } }
+                    steps {
                             junit '/usr/src/app/test/build/test-reports/test.xml'
-                        }                
+                    }                
                 }
             }    
          }
